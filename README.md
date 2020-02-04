@@ -5,6 +5,25 @@
 3. When you application first runs `#main-container` should render the _first_ dog instance from the fetched dog instances from the api.
 4. A user should be able to see a form in `#main-container` that allows them to add a new nickname to that specific dog.
 5. A user should be able to see a list of nicknames that belong to the dog in `.nickname-list`
+6. A user should be able to add a new nickname to a dog using the `#new-nickname-form`. To do this, you need to send a POST request to `'/nicknames'` endpoint.
+
+The headers of request should be:
+
+```
+{
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+}
+```
+
+The body of the request should look like this:
+
+```
+{
+    dog_id: 1,
+    content: "A New Nickname"
+}
+```
 
 ### The main containter should look like this:
 
