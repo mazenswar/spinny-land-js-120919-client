@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+:root {
+  --banana: yellow;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -46,6 +50,7 @@ h1 {
 }
 
 #main-container {
+  position: relative;
   padding: 5vh;
   grid-column: 2;
   grid-row: 2;
@@ -104,4 +109,74 @@ h1 {
   margin: 2vh 0;
   background-color: aquamarine;
   border-radius: 10px;
+}
+
+#pika {
+  position: absolute;
+  top: 45%;
+  right: -200px;
+  background-color: red;
+  height: 200px;
+  width: 200px;
+  transition: 0.5s;
+  background-image: url(https://i.kym-cdn.com/photos/images/original/001/431/201/40f.png);
+  background-position: center;
+  background-size: cover;
+  transform: rotate(270deg);
+  border-radius: 100px 100px 0 0;
+}
+
+img:hover ~ #pika {
+  right: 0px;
+}
+
+img {
+  /* animation-name: annie;
+  animation-duration: 4s; */
+  animation: anim 4s infinite alternate;
+}
+
+.test {
+  width: 800px;
+  height: 600px;
+  border: 2px solid black;
+  margin: 100px auto;
+  background-image: linear-gradient(pink, cyan, purple, aqua, red, green, black);
+}
+
+@keyframes annie {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes anim {
+  0% {
+    left: 0px;
+    top: 0px;
+    background-color: black;
+  }
+  25% {
+    left: 500px;
+    top: 0px;
+    background-color: red;
+  }
+  50% {
+    left: 500px;
+    top: 500px;
+    background-color: green;
+  }
+  75% {
+    left: 0px;
+    top: 500px;
+    background-color: blue;
+  }
+  100% {
+    left: 0px;
+    top: 0px;
+    background-color: black;
+  }
 }

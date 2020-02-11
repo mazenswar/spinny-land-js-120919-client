@@ -25,6 +25,7 @@ function mainContainerTemplate(dog) {
           <input type="text" name="nickname" />
           <input type="submit" value="Add new nickname" />
         </form>
+        <div id="pika"></div>
     `;
   // FORM
   const form = document.querySelector('#new-nickname-form');
@@ -48,13 +49,13 @@ function createNewNicknameToAPI(event) {
   // data
   const data = {
     dog_id: event.target.dataset.dogid,
-    content: event.target.nickname.value
+    content: event.target.nickname.value,
   };
   // fetch
   const config = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
   };
   fetch(NICK_URL, config)
     .then(r => r.json())
